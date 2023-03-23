@@ -1,37 +1,24 @@
-quickSort(array, 0, array.length -1);
-console.log(array);
-
-
-function  quickSort(arr, left, right)
-{
-	var i = left;
-	var j = right;
-	var tmp;
-	pivotidx = (left + right) / 2; 
-	var pivot = parseInt(arr[pivotidx.toFixed()]);  
-	/* partition */
-	while (i <= j)
-	{
-		while (parseInt(arr[i]) < pivot)
-		i++;
-		while (parseInt(arr[j]) > pivot)
-			j--;
-		if (i <= j)
-		{
-			tmp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = tmp;
-			i++;
-			j--;
-		}
-	}
-
-	/* recursion */
-	if (left < j)
-		quickSort(arr, left, j);
-	if (i < right)
-		quickSort(arr, i, right);
-	return arr;
-}
-
-var array = [8, 2, 5, 7, 4, 3, 12, 6, 19, 11, 10, 13, 9];
+const quick_sort = (array, start = 0, end = array.length - 1) => {
+    if (start >= end) {
+      return;
+    }
+    const pivotIndex = partition(array, start, end);
+    quick_sort(array, start, pivotIndex - 1);
+    quick_sort(array, pivotIndex + 1, end);
+    return array;
+  };
+  const partition = (array, start, end) => {
+    const pivot = array[end];
+    let i = start;
+    for (let j = start; j < end; j++) {
+      if (array[j] < pivot) {
+        [array[i], array[j]] = [array[j], array[i]];
+        i++;
+      }
+    }
+    [array[i], array[end]] = [array[end], array[i]];
+    return i;
+  }; 
+  vetor = [7,3,1,5,8];
+  console.log(quick_sort(vetor)); 
+  

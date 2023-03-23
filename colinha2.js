@@ -1,19 +1,31 @@
-
-
-function shuffleArray(arr,vezes) {
-    for (let t = 0 ; t<vezes ; t++){
-        for (let i = arr.length - 1; i > 0; i--) {
-        
-            const j = Math.floor(Math.random() * (i + 1));
-            [arr[i], arr[j]] = [arr[j], arr[i]];
-           
-        }
-        console.log(arr)
-        
-    
-    }
+function  quickSort(arr, left, right)
+{
+	var i = left;
+	var j = right;
+	var tmp;
+	pivotidx = (left + right) / 2; 
+	var pivot = parseInt(arr[pivotidx.toFixed()]);  
+	while (i <= j)
+	{
+		while (parseInt(arr[i]) < pivot)
+		i++;
+		while (parseInt(arr[j]) > pivot)
+			j--;
+		        if (i <= j)
+		{
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			i++;
+			j--;
+		}
+	}
+	if (left < j)
+		quickSort(arr, left, j);
+	if (i < right)
+		quickSort(arr, i, right);
+	return arr;
 }
-    
-var arrA = [1, 2, 3, 4, 5];
 
-console.log(shuffleArray(arrA,3)); 
+vetor = [7,3,1,5,8]
+console.log(quickSort(vetor,7,8))
