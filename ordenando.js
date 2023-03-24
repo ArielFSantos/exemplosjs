@@ -65,11 +65,46 @@ const partition = (array, start, end) => {
   [array[i], array[end]] = [array[end], array[i]];
   return i;
 };
+//function add(){
+
+   // let valor = document.getElementById('valor').value;
+   // let valores = document.getElementById('valores');
+    //const li = document.createElement('li');
+   // li.innerText = valor;
+//}
+
+function add() {
+    // Capturar o campo de entrada com id valor
+    const input = document.getElementById('valor');
+  
+    // Capturar a lista com id valores
+    const list = document.getElementById('valores');
+  
+    // Criar uma variável node, com um elemento li definido via createElement
+    const li = document.createElement('li');
+  
+    // Definir um nó de texto, com o valor do campo de entrada, e incluí-lo como filho de node
+    const textNode = document.createTextNode(input.value);
+    li.appendChild(textNode);
+  
+    // Adicionar o elemento node à lista valores
+    list.appendChild(li);
+  
+    // Limpar o campo de entrada
+    input.value = '';
+  }
+
+function ordenar(){
+
+}
+function misturar(){
+
+}
 
 //console.log(swap(1, 5));
-vetor = [7, 3, 1, 5, 8];
+//vetor = [7, 3, 1, 5, 8];
 //shuffle(vetor, 1);
 //shuffle(vetor, 2);
 //console.log(bubble_sort(vetor));
 //console.log(selection_sort(vetor));
-console.log(quick_sort(vetor));
+//console.log(quick_sort(vetor));
