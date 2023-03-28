@@ -78,11 +78,17 @@ function add() {
   }
 
 function ordenar(){
-
-  const list = document.getElementById('valores');
-  const select = Array.from(list.querySelectorAll('li')).map(item => item.innerHTML);
-  console.log(select);
-
+  const choice = document.getElementById('escolha').value;
+  const list = (document.getElementById('valores')).children;
+  const vetorList = [];
+  for (let i = 0; i < list.length; i++) {
+    const valor = parseInt(list[i].innerHTML);
+    vetorList.push(valor);
+  }
+  if (choice == 'Bubble_Sort'){
+    console.log(bubble_sort(vetorList))
+    
+  }
 }
 function misturar(){
 
