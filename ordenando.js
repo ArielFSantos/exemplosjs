@@ -65,32 +65,15 @@ const partition = (array, start, end) => {
   [array[i], array[end]] = [array[end], array[i]];
   return i;
 };
-//function add(){
-
-   // let valor = document.getElementById('valor').value;
-   // let valores = document.getElementById('valores');
-    //const li = document.createElement('li');
-   // li.innerText = valor;
-//}
-
 function add() {
-    // Capturar o campo de entrada com id valor
+    
     const input = document.getElementById('valor');
-  
-    // Capturar a lista com id valores
     const list = document.getElementById('valores');
-  
-    // Criar uma variável node, com um elemento li definido via createElement
     const li = document.createElement('li');
-  
-    // Definir um nó de texto, com o valor do campo de entrada, e incluí-lo como filho de node
     const textNode = document.createTextNode(input.value);
-    li.appendChild(textNode);
-  
-    // Adicionar o elemento node à lista valores
+
+    li.appendChild(textNode);  
     list.appendChild(li);
-  
-    // Limpar o campo de entrada
     input.value = '';
   }
 
