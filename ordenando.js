@@ -79,6 +79,10 @@ function add() {
 
 function ordenar(){
 
+  const list = document.getElementById('valores');
+  const select = Array.from(list.querySelectorAll('li')).map(item => item.innerHTML);
+  console.log(select);
+
 }
 function misturar(){
 
