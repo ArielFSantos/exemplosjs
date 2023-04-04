@@ -1,3 +1,7 @@
-const list = document.getElementById('valores');
-const vetorList = Array.from(list.querySelectorAll('li')).map(item => item.innerHTML);
-console.log(vetorList);
+
+const lista = [1, 2, 3, 4, 5];
+const ul = document.getElementById('valores');
+
+const listaHTML = lista.map(item => `<li>${item}</li>`).join('');
+
+ul.innerHTML = listaHTML;

@@ -4,13 +4,12 @@ const swap = (Valor1, Valor2) => {
   Valor2 = aux;
   return { Valor1, Valor2 };
 };
-const shuffle = (Vetor, Trocas) => {
+const shuffle = (Vetor, Trocas=1) => {
   for (let t = 0; t < Trocas; t++) {
     for (let i = Vetor.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [Vetor[i], Vetor[j]] = [Vetor[j], Vetor[i]];
     }
-    console.log(Vetor);
   }
   return Vetor;
 };
@@ -85,13 +84,66 @@ function ordenar(){
     const valor = parseInt(list[i].innerHTML);
     vetorList.push(valor);
   }
+  const lista = document.getElementById('valores');
+  
   if (choice == 'Bubble_Sort'){
-    console.log(bubble_sort(vetorList))
-    
+  const listaOrdenada = bubble_sort(vetorList);
+  const listaHTML = listaOrdenada.map(item => `<li>${item}</li>`).join('');
+  lista.innerHTML = listaHTML;
+
+  }else if (choice == 'Selection_Sort'){
+  const listaOrdenada = selection_sort(vetorList);
+  const listaHTML = listaOrdenada.map(item => `<li>${item}</li>`).join('');
+  lista.innerHTML = listaHTML;
+
+  }else if (choice == 'Quick_Sort'){
+  const listaOrdenada = quick_sort(vetorList);
+  const listaHTML = listaOrdenada.map(item => `<li>${item}</li>`).join('');
+  lista.innerHTML = listaHTML;
   }
+  
+
+
 }
+
 function misturar(){
 
+  const list = (document.getElementById('valores')).children;
+  const vetorList = [];
+  for (let i = 0; i < list.length; i++) {
+    const valor = parseInt(list[i].innerHTML);
+    vetorList.push(valor);
+  }
+  const lista = document.getElementById('valores');
+  const listaMisturada = shuffle(vetorList);
+  console.log(listaMisturada)
+  const listaHTML = listaMisturada.map(item => `<li>${item}</li>`).join('');
+  lista.innerHTML = listaHTML;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //const lista = document.getElementById('valores');
+  //const list = (document.getElementById('valores')).children;
+  //const vetorList = [];
+  //for (let i = 0; i < list.length; i++) {
+  //  const valor = parseInt(list[i].innerHTML);
+  //  vetorList.push(valor);
+  //}
+ // const listaMisturada = shuffle(vetorList);
+  //const listaHTML = listaMisturada.map(item => `<li>${item}</li>`).join('');
+  //lista.innerHTML = listaHTML;
 }
 
 //console.log(swap(1, 5));
