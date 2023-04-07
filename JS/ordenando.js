@@ -116,34 +116,10 @@ function misturar(){
   }
   const lista = document.getElementById('valores');
   const listaMisturada = shuffle(vetorList);
-  console.log(listaMisturada)
+  console.log(listaMisturada);
   const listaHTML = listaMisturada.map(item => `<li>${item}</li>`).join('');
   lista.innerHTML = listaHTML;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //const lista = document.getElementById('valores');
-  //const list = (document.getElementById('valores')).children;
-  //const vetorList = [];
-  //for (let i = 0; i < list.length; i++) {
-  //  const valor = parseInt(list[i].innerHTML);
-  //  vetorList.push(valor);
-  //}
- // const listaMisturada = shuffle(vetorList);
-  //const listaHTML = listaMisturada.map(item => `<li>${item}</li>`).join('');
-  //lista.innerHTML = listaHTML;
 }
 
 //console.log(swap(1, 5));

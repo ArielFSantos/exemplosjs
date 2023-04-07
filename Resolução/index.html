@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Receitas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffc107;
+        }
+        .pnlCatalogo {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body onload="preencheCatalogo()">
+    <div class="container-fluid">
+        <h1>Catálogo de Receitas</h1>
+        <div class="pnlCatalogo" id="pnlCatalogo"></div>
+    </div>
+    <script>
+        const receitas = [
+            {
+                titulo: "Bolo de Cenoura",
+                imagem: "imagens/bolo_cenoura.png",
+                preparo: "Misture os ingredientes e asse",
+                ingredientes: [
+                    "3 cenouras",
+                    "1 xícara de açúcar",
+                    "1/2 xícara de óleo",
+                    "2 xícaras de farinha de trigo",
+                    "1 colher de sopa de fermento"
+                ]
+            },
+            {
+                titulo: "Arroz com Frango",
+                imagem: "imagens/arroz_frango.png",
+                preparo: "Cozinhe o arroz e o frango, misture e sirva",
+                ingredientes: [
+                    "2 xícaras de arroz",
+                    "4 xícaras de água",
+                    "500g de frango",
+                    "2 dentes de alho",
+                    "1 cebola",
+                    "1/2 pimentão",
+                    "Sal a gosto"
+                ]
+            },
+            {
+                titulo: "Lasanha",
+                imagem: "imagens/lasanha.png",
+                preparo: "Cozinhe a massa e faça o molho, monte a lasanha e leve ao forno",
+                ingredientes: [
+                    "500g de massa de lasanha",
+                    "500g de carne moída",
+                    "2 dentes de alho",
+                    "1 cebola",
+                    "1 lata de molho de tomate",
+                    "1/2 lata de creme de leite",
+                    "300g de queijo mussarela",
+                    "Orégano a gosto",
+                    "Sal a gosto"
+                ]
+            }
+        ];
+
+        function getListaIngredientes(receita) {
+            const listaHTML = receita.ingredientes
+                .map(ingrediente => `<li>${ingrediente}</li>`)
+                .reduce((prev, curr) => prev + curr, '');
+            return `<ul>${listaHTML}</ul>`;
+        }
+
+        function getCard(receita) {
+            const listaHTML = getListaIngredientes(receita);
+            return `
+                <div class="card" style="width: 250px">
+                    <img src="${receita.imagem}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">${receita.titulo}</h5>
+                        <div class="card-text">
+                            ${listaHTML}
+                            <hr>
+                            <p>${receita.preparo}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function preencheCatalogo() {
+            const pnlCatalogo = document
+        }
