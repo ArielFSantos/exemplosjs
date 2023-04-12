@@ -38,7 +38,7 @@ const receitas = [
 
 function getListaIngredientes (receitas){
     let listaHTML = "<ul>";
-    const listaIngredientes = receitas.ingredientes.map((ingrediente) => {
+    const listaIngredientes = receitas.map((ingrediente) => {
         return "<li>" + ingrediente + "</li>";
       })
       .reduce((acumulador, item) => {
@@ -56,7 +56,7 @@ function getCard(receitas){
         <h5 class="card-title">${receitas.titulo}</h5>
         <div class="card-text">${getListaIngredientes(receitas.ingredientes)}</div>
         <hr>
-        <p>${receita.preparo}</p>
+        <p>${receitas.preparo}</p>
       </div>
     </div>
   `;
