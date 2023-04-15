@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ordenando</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<style>
+    main{
+        margin: auto;
+        width: 400px;
+    }
+</style>
+
 </head>
 <body>
     <main>
+        <h1>Ordenando Valores</h1>
         <form action="ordenando.html" method="dialog">
-            <label for="numero">Numero: </label>
-            <input id="valor" type="number" alt="Entrada Numerica">
-            <button type="submit" onclick="add()">Adicionar</button>
+            <label class="form-label" for="numero">Valor </label>
+            <input class="form-control"  id="valor" type="number" alt="Entrada Numerica">
+            <button  class="btn btn-primary" type="submit" onclick="add()">Adicionar</button>
             <hr>
-            <select name="choice" id="escolha">
+            <select class="form-select" name="choice" id="escolha">
                 <option value="Bubble_Sort">Bubble Sort</option>
                 <option value="Selection_Sort">Selection Sort</option>
                 <option value="Quick_Sort">Quick Sort</option>
             </select>
+            <button  class="btn btn-primary" onclick="ordenar()">Ordenar</button>
+            <button  class="btn btn-primary" onclick="misturar()">Misturar</button>
             <hr>
-            <button onclick="ordenar()">Ordenar</button>
-            <button onclick="misturar()">Misturar</button>
             <ul id="valores">
             </ul>
             
